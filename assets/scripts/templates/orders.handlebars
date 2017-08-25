@@ -1,0 +1,24 @@
+{{#each orders as |order|}}
+
+<!-- this is the handlebars for products when the page loads. Products will
+be displayed, through this mechanism, on the landingPage -->
+<tr>
+
+ <td><p>{{order.date_placed}}</p></td>
+ <!-- set up modal here -->
+ <td><ul>
+  {{#each order.products as |product|}}
+    <li>{{product.name}}, Ordered: {{product.quantity}}</li>
+    {{/each}}
+ <td><p>${{order.total}}</p></td>
+
+
+
+
+<!-- Add to cart form with a hidden input that contains the order id and an input
+for quanity. When submitted, this form will trigger a function to add the
+item with the specified quanity to the shopping cart -->
+</tr>
+
+
+{{/each}}
